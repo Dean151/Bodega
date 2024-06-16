@@ -1,4 +1,4 @@
-// swift-tools-version:6.0
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -23,13 +23,12 @@ let package = Package(
         .target(
             name: "Bodega",
             dependencies: [
-                .product(name: "SQLite", package: "SQLite.swift")
+                .productItem(name: "SQLite", package: "SQLite.swift", condition: nil)
             ]
         ),
         .testTarget(
             name: "BodegaTests",
             dependencies: ["Bodega"]
         ),
-    ],
-    swiftLanguageVersions: [.v6]
+    ]
 )
